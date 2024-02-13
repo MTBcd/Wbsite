@@ -1396,6 +1396,28 @@ body.offcanvas {
       opacity: 1;
       visibility: visible; } }
 
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.skill-card {
+    flex-basis: 45%;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin: 10px;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+.skill-card:hover {
+    transform: translateY(-5px);
+}
+.skill-level {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
 @media screen and (max-width: 480px) {
   .col-xxs-12 {
     float: none;
