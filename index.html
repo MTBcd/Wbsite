@@ -49,6 +49,8 @@
 	    <script src="js/respond.min.js"></script>
 	    <![endif]-->
 
+	    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+		
 	</head>
 	<body>
 	<div id="colorlib-page">
@@ -277,6 +279,21 @@ Copyright <script>document.write(new Date().getFullYear());</script> All rights 
 			</section>
 		
 
+		    	<section class="colorlib-radar-chart" data-section="radar">
+			   <div class="colorlib-narrow-content">
+			      <div class="row">
+			         <div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
+			            <span class="heading-meta">Overview</span>
+			            <h2 class="colorlib-heading">General Skills and Personality</h2>
+			         </div>
+			      </div>
+			      <div class="row">
+			         <div class="col-md-12">
+			            <canvas id="personalityRadarChart"></canvas>
+			         </div>
+			      </div>
+			   </div>
+			</section>
 
 
 
@@ -697,6 +714,37 @@ Copyright <script>document.write(new Date().getFullYear());</script> All rights 
 		<script src="js/owl.carousel.min.js"></script>
 		<script src="js/jquery.countTo.js"></script>
 		<script src="js/main.js"></script>
+
+		<script>
+		   var ctx = document.getElementById('personalityRadarChart').getContext('2d');
+		   var personalityRadarChart = new Chart(ctx, {
+		      type: 'radar',
+		      data: {
+		         labels: ['Creativity', 'Analytical Thinking', 'Problem Solving', 'Teamwork', 'Leadership', 'Adaptability'],
+		         datasets: [{
+		            label: 'Skill Levels',
+		            data: [80, 95, 85, 70, 75, 90],
+		            backgroundColor: 'rgba(44, 152, 240, 0.2)',
+		            borderColor: 'rgba(44, 152, 240, 1)',
+		            borderWidth: 2,
+		            pointBackgroundColor: 'rgba(44, 152, 240, 1)',
+		         }]
+		      },
+		      options: {
+		         scale: {
+		            ticks: {
+		               beginAtZero: true,
+		               max: 100,
+		               stepSize: 20,
+		               fontSize: 14
+		            },
+		            pointLabels: {
+		               fontSize: 14
+		            }
+		         }
+		      }
+		   });
+		</script>
 		
 		</body>
 </html>
