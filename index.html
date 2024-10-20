@@ -703,10 +703,10 @@ Copyright <script>document.write(new Date().getFullYear());</script> All rights 
 		   var personalityRadarChart = new Chart(ctx, {
 		      type: 'radar',
 		      data: {
-		         labels: ['Creativity', 'Analytical Thinking', 'Problem Solving', 'Teamwork', 'Leadership', 'Adaptability'],
+		         labels: ['Quantitative Analysis', 'Data Science', 'Risk Management', 'Financial Modeling', 'Econometrics', 'Python Programming', 'Machine Learning', 'Portfolio Construction'],
 		         datasets: [{
 		            label: 'Skill Levels',
-		            data: [80, 95, 85, 70, 75, 90],
+		            data: [95, 90, 85, 90, 88, 95, 85, 87],  // Adjusting data to reflect professional skill levels
 		            backgroundColor: 'rgba(44, 152, 240, 0.2)',
 		            borderColor: 'rgba(44, 152, 240, 1)',
 		            borderWidth: 2,
@@ -724,10 +724,13 @@ Copyright <script>document.write(new Date().getFullYear());</script> All rights 
 		            pointLabels: {
 		               fontSize: 14
 		            }
-		         }
+		         },
+		         responsive: true,
+		         maintainAspectRatio: false,  // Ensure the chart scales well on different screen sizes
 		      }
 		   });
 		</script>
+
 		
 		</body>
 </html>
