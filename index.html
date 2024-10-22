@@ -700,7 +700,13 @@ Copyright <script>document.write(new Date().getFullYear());</script> All rights 
 
 		<script>
 		var ctx = document.getElementById('personalityRadarChart').getContext('2d');
-		var personalityRadarChart = new Chart(ctx, {
+		
+		// Clear the previous chart instance if it exists to prevent multiple renderings.
+		if (window.personalityRadarChart) {
+		    window.personalityRadarChart.destroy();
+		}
+		
+		window.personalityRadarChart = new Chart(ctx, {
 		    type: 'radar',
 		    data: {
 		        labels: ['Quantitative Analysis', 'Data Science', 'Risk Management', 'Financial Modeling', 'Econometrics', 'Machine Learning', 'Portfolio Construction'],
@@ -719,9 +725,8 @@ Copyright <script>document.write(new Date().getFullYear());</script> All rights 
 		        scale: {
 		            ticks: {
 		                beginAtZero: true,  // Ensure scale starts at 0
-		                min: 0,  // Set the minimum explicitly
-		                suggestedMin: 0,  // Suggest the minimum should be 0 (for stronger enforcement)
-		                max: 100,  // Set the max to 100
+		                min: 0,  // Explicitly set minimum to 0
+		                max: 100,  // Set the maximum to 100
 		                stepSize: 10,  // Increment tick marks by 10 units
 		                fontSize: 12,
 		                showLabelBackdrop: false,  // Remove label background box
