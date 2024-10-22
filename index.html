@@ -706,10 +706,10 @@ Copyright <script>document.write(new Date().getFullYear());</script> All rights 
 		        labels: ['Quantitative Analysis', 'Data Science', 'Risk Management', 'Financial Modeling', 'Econometrics', 'Machine Learning', 'Portfolio Construction'],
 		        datasets: [{
 		            label: 'Skill Levels',
-		            data: [90, 85, 75, 80, 70, 85, 80],
-		            backgroundColor: 'rgba(0, 102, 204, 0.2)', // Light blue background
-		            borderColor: 'rgba(0, 102, 204, 1)',       // Dark blue border
-		            pointBackgroundColor: 'rgba(0, 102, 204, 1)', // Dark blue points
+		            data: [90, 85, 75, 80, 70, 85, 80],  // Your specific skill levels
+		            backgroundColor: 'rgba(0, 102, 204, 0.2)',  // Light blue background
+		            borderColor: 'rgba(0, 102, 204, 1)',  // Blue border
+		            pointBackgroundColor: 'rgba(0, 102, 204, 1)',  // Points color
 		            pointBorderColor: '#fff',
 		            pointHoverBackgroundColor: '#fff',
 		            pointHoverBorderColor: 'rgba(0, 102, 204, 1)'
@@ -718,13 +718,14 @@ Copyright <script>document.write(new Date().getFullYear());</script> All rights 
 		    options: {
 		        scale: {
 		            ticks: {
-		                beginAtZero: true,
-		                max: 100, // Ensuring consistency with a 100-point scale
-		                stepSize: 20,
+		                beginAtZero: true,  // Force to start from 0
+		                max: 100,  // Set maximum to 100
+		                min: 0,    // Ensure the minimum value is 0
+		                stepSize: 20,  // Set increments of 20
 		                fontSize: 12
 		            },
 		            pointLabels: {
-		                fontSize: 14,  // Larger font for skill labels
+		                fontSize: 14,  // Font size for labels
 		                fontStyle: 'bold'
 		            }
 		        },
