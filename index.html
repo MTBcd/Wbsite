@@ -703,57 +703,54 @@ Copyright <script>document.write(new Date().getFullYear());</script> All rights 
 		var personalityRadarChart = new Chart(ctx, {
 		    type: 'radar',
 		    data: {
-		        labels: [
-		            'Quantitative Analysis', 
-		            'Data Science', 
-		            'Risk Management', 
-		            'Financial Modeling', 
-		            'Econometrics', 
-		            'Machine Learning', 
-		            'Portfolio Construction'
-		        ],
-		        datasets: [{
-		            label: 'Skill Levels',
-		            data: [90, 85, 75, 80, 70, 85, 80],  // These are your skill values
-		            backgroundColor: 'rgba(0, 102, 204, 0.2)',  // Semi-transparent blue fill
-		            borderColor: 'rgba(0, 102, 204, 1)',  // Blue border
-		            pointBackgroundColor: 'rgba(0, 102, 204, 1)',  // Point color
-		            pointBorderColor: '#fff',  // White border around points
-		            pointHoverBackgroundColor: '#fff',  // Hover effect on points
-		            pointHoverBorderColor: 'rgba(0, 102, 204, 1)'  // Border when hovering
-		        }]
+		        labels: ['Quantitative Analysis', 'Data Science', 'Risk Management', 'Financial Modeling', 'Econometrics', 'Machine Learning', 'Portfolio Construction'],
+		        datasets: [
+		            {
+		                label: 'Skill Levels - Person 1',
+		                data: [90, 85, 75, 80, 70, 85, 80],  // First dataset values
+		                backgroundColor: 'rgba(0, 102, 204, 0.2)',  // Light blue for Person 1
+		                borderColor: 'rgba(0, 102, 204, 1)',  // Blue border for Person 1
+		                pointBackgroundColor: 'rgba(0, 102, 204, 1)',
+		                pointBorderColor: '#fff',
+		                pointHoverBackgroundColor: '#fff',
+		                pointHoverBorderColor: 'rgba(0, 102, 204, 1)'
+		            },
+		            {
+		                label: '',
+		                data: [0, 0, 0, 0, 0, 0, 0]
+		            }
+		        ]
 		    },
 		    options: {
-		        responsive: true,
-		        maintainAspectRatio: false,  // Allows the chart to resize better
 		        scale: {
 		            ticks: {
-		                beginAtZero: true,  // Ensure the scale starts at 0
-		                min: 0,  // Force the scale to start at 0
-		                max: 100,  // Force the scale to go up to 100
-		                stepSize: 10,  // Steps for each line on the radar
-		                showLabelBackdrop: false,  // Remove the backdrop behind labels
-		                fontSize: 14,  // Adjust font size for better visibility
-		                fontColor: '#666'  // Optional: Darker font color for better contrast
+		                beginAtZero: true,  // Ensure scale starts at 0
+		                min: 0,  // Set the minimum explicitly
+		                max: 100,  // Set the max to 100
+		                stepSize: 10,  // Increment tick marks by 10 units
+		                fontSize: 12,
+		                showLabelBackdrop: false,  // Remove label background box
+		                callback: function(value, index, values) {
+		                    return value;  // Display all values including 0
+		                }
 		            },
 		            pointLabels: {
-		                fontSize: 14,  // Larger text for skill labels
-		                fontColor: '#333',  // Darker color for labels
-		                fontStyle: 'bold'  // Bold for more professional look
+		                fontSize: 14,  // Size of the skill labels
+		                fontStyle: 'bold'
 		            }
 		        },
 		        legend: {
-		            display: true,  // Display legend
-		            position: 'top',  // Position the legend on top
+		            display: true,
+		            position: 'top',
 		            labels: {
-		                fontColor: 'rgba(0, 0, 0, 0.7)',  // Darker font for legend
-		                fontSize: 14  // Adjust font size of the legend
+		                fontColor: 'rgba(0, 0, 0, 0.7)',
+		                fontSize: 14
 		            }
 		        },
 		        layout: {
 		            padding: {
 		                top: 20,
-		                bottom: 20  // Add padding to ensure the chart doesn't overlap with other content
+		                bottom: 20
 		            }
 		        }
 		    }
