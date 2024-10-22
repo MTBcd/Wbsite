@@ -718,14 +718,18 @@ Copyright <script>document.write(new Date().getFullYear());</script> All rights 
 		    options: {
 		        scale: {
 		            ticks: {
-		                beginAtZero: true,  // Force to start from 0
-		                max: 100,  // Set maximum to 100
-		                min: 0,    // Ensure the minimum value is 0
-		                stepSize: 20,  // Set increments of 20
-		                fontSize: 12
+		                beginAtZero: true,  // Start scale at 0
+		                min: 0,  // Explicitly set minimum to 0
+		                max: 100,  // Explicitly set maximum to 100
+		                stepSize: 10,  // Show tick marks at every 10 units
+		                fontSize: 12,
+		                showLabelBackdrop: false,  // Optional: Removes the box behind the ticks
+		                callback: function(value, index, values) {
+		                    return value;  // Show every tick value, even if there's no data below 70
+		                }
 		            },
 		            pointLabels: {
-		                fontSize: 14,  // Font size for labels
+		                fontSize: 14,  // Font size for the skill labels
 		                fontStyle: 'bold'
 		            }
 		        },
