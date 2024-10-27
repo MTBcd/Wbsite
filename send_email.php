@@ -7,7 +7,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $message = htmlspecialchars(trim($_POST['message']));
 
     // Set your email address where you want to receive messages
-    $to = "your-email@example.com";
+    $to = "mboccardi71@gmail.com";
     $headers = "From: $email\r\n";
     $headers .= "Reply-To: $email\r\n";
     $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
@@ -21,8 +21,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Send the email
     if (mail($to, $subject, $email_content, $headers)) {
         // Redirect to a success page (optional)
-        header("Location: thank_you.html");
-        exit;
+        // header("Location: thank_you.html");
+        // exit;
     } else {
         echo "Oops! Something went wrong, and we couldn't send your message.";
     }
