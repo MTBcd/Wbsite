@@ -706,64 +706,103 @@ Copyright <script>document.write(new Date().getFullYear());</script> All rights 
 		<script src="js/owl.carousel.min.js"></script>
 		<script src="js/jquery.countTo.js"></script>
 		<script src="js/main.js"></script>
-
+		
+		<!--
+		Quantitative Analysis:	Regression analysis, Factors influencing individual wages, Capital Asset Pricing Model (CAPM), Econometrics of banking|	4	|40
+		Data Science:		Titanic dataset with PySpark, Survey Construction, Data structure with SQL and MongoDB, SAS program on customer data|	4	|40
+		Risk Management:	Stress-test construction with Merton Model, GARCH model, Decision-making under risk and uncertainty	|		3	|30
+		Financial Modeling:	Dynamic systems for macroeconomics, Economic policy, Corporate finance project, Air traffic patterns analysis	|	4	|40
+		Econometrics:		Factors influencing wages (STATA), CAPM and VECM in R, Economic policy				|			3	|30
+		Machine Learning:	Deep learning on nonlinear optimization, Algorithmic trading, Deep learning on air traffic patterns	|		3	|30
+		Portfolio Construction:	Portfolio for pension funds, Dynamic portfolio with Black-Litterman, Risk Parity in portfolio construction	|	3	|30
+		-->
+		
 		<script>
-		var ctx = document.getElementById('personalityRadarChart').getContext('2d');
-		var personalityRadarChart = new Chart(ctx, {
-		    type: 'radar',
-		    data: {
-		        labels: ['Quantitative Analysis', 'Data Science', 'Risk Management', 'Financial Modeling', 'Econometrics', 'Machine Learning', 'Portfolio Construction'],
-		        datasets: [
-		            {
-		                label: 'Skill Levels',
-		                data: [90, 85, 75, 80, 70, 85, 80],  // First dataset values
-		                backgroundColor: 'rgba(0, 102, 204, 0.2)',  // Light blue for Person 1
-		                borderColor: 'rgba(0, 102, 204, 1)',  // Blue border for Person 1
-		                pointBackgroundColor: 'rgba(0, 102, 204, 1)',
-		                pointBorderColor: '#fff',
-		                pointHoverBackgroundColor: '#fff',
-		                pointHoverBorderColor: 'rgba(0, 102, 204, 1)'
-		            },
-			{
-			label: '',
-			data: [100, 0]
-			}
-		        ]
-		    },
-		    options: {
-		        scale: {
-		            ticks: {
-		                beginAtZero: true,  // Ensure scale starts at 0
-		                min: 0,  // Set the minimum explicitly
-		                max: 100,  // Set the max to 100
-		                stepSize: 20,  // Increment tick marks by 10 units
-		                fontSize: 12,
-		                showLabelBackdrop: false,  // Remove label background box
-		                callback: function(value, index, values) {
-		                    return value;  // Display all values including 0
+		    // Sample project counts in each skill area
+		    const projectCounts = {
+		        'Quantitative Analysis': 4,
+		        'Data Science': 4,
+		        'Risk Management': 3,
+		        'Financial Modeling': 4,
+		        'Econometrics': 3,
+		        'Machine Learning': 3,
+		        'Portfolio Construction': 3
+		    };
+		
+		    // Calculate mean and standard deviation
+		    const projectValues = Object.values(projectCounts);
+		    const mean = projectValues.reduce((a, b) => a + b, 0) / projectValues.length;
+		    const variance = projectValues.reduce((sum, value) => sum + Math.pow(value - mean, 2), 0) / projectValues.length;
+		    const stdDev = Math.sqrt(variance);
+		
+		    // Calculate Z-scores and apply an additional margin (progression factor)
+		    const progressionMargin = 0.5; // Adjust this margin as needed
+		    const zScores = projectValues.map(count => ((count - mean) / stdDev) + progressionMargin);
+		
+		    // Normalize Z-scores to a scale of 0-100 for better visualization
+		    const normalizedScores = zScores.map(z => (z + Math.abs(Math.min(...zScores))) * (100 / (Math.max(...zScores) + Math.abs(Math.min(...zScores)))));
+		
+		    // Radar chart data
+		    var ctx = document.getElementById('personalityRadarChart').getContext('2d');
+		    var personalityRadarChart = new Chart(ctx, {
+		        type: 'radar',
+		        data: {
+		            labels: [
+		                'Quantitative Analysis', 
+		                'Data Science', 
+		                'Risk Management', 
+		                'Financial Modeling', 
+		                'Econometrics', 
+		                'Machine Learning', 
+		                'Portfolio Construction'
+		            ],
+		            datasets: [
+		                {
+		                    label: 'Skill Levels',
+		                    data: normalizedScores,  // Z-scores normalized to a 0-100 scale
+		                    backgroundColor: 'rgba(0, 102, 204, 0.2)',  // Light blue for visualization
+		                    borderColor: 'rgba(0, 102, 204, 1)',  // Blue border color
+		                    pointBackgroundColor: 'rgba(0, 102, 204, 1)',
+		                    pointBorderColor: '#fff',
+		                    pointHoverBackgroundColor: '#fff',
+		                    pointHoverBorderColor: 'rgba(0, 102, 204, 1)'
+		                }
+		            ]
+		        },
+		        options: {
+		            scale: {
+		                ticks: {
+		                    beginAtZero: true,
+		                    min: 0,
+		                    max: 100,  // Maximum set to 100 to reflect the normalized scale
+		                    stepSize: 20,
+		                    fontSize: 12,
+		                    showLabelBackdrop: false,
+		                    callback: function(value, index, values) {
+		                        return value;  // Display all values including 0
+		                    }
+		                },
+		                pointLabels: {
+		                    fontSize: 16,
+		                    fontStyle: 'bold'
 		                }
 		            },
-		            pointLabels: {
-		                fontSize: 16,  // Size of the skill labels
-		                fontStyle: 'bold'
-		            }
-		        },
-		        legend: {
-		            display: true,
-		            position: 'top',
-		            labels: {
-		                fontColor: 'rgba(0, 0, 0, 0.7)',
-		                fontSize: 16
-		            }
-		        },
-		        layout: {
-		            padding: {
-		                top: 20,
-		                bottom: 20
+		            legend: {
+		                display: true,
+		                position: 'top',
+		                labels: {
+		                    fontColor: 'rgba(0, 0, 0, 0.7)',
+		                    fontSize: 16
+		                }
+		            },
+		            layout: {
+		                padding: {
+		                    top: 20,
+		                    bottom: 20
+		                }
 		            }
 		        }
-		    }
-		});
+		    });
 		</script>
 
 		
