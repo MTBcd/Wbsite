@@ -748,11 +748,11 @@ Copyright <script>document.write(new Date().getFullYear());</script> All rights 
 		<script>
 		    // Project counts by skill category
 		    const projectCounts = {
-		        'Financial & Statistical Modeling': 6,  // Number of projects
+		        'Financial & Statistical Modeling': 6,  
 		        'Machine Learning & Deep Learning': 4,
 		        'Data Analysis': 5,
 		        'Big Data & Data Management': 4,
-		        'Portfolio Management': 3,
+		        'Portfolio Management': 2,
 		        'Economics': 4,
 		        'Risk Management': 3
 		    };
@@ -763,9 +763,12 @@ Copyright <script>document.write(new Date().getFullYear());</script> All rights 
 		    const variance = projectValues.reduce((sum, value) => sum + Math.pow(value - mean, 2), 0) / projectValues.length;
 		    const stdDev = Math.sqrt(variance);
 		
+		    // Handle edge case: Zero standard deviation
+		    const safeStdDev = stdDev === 0 ? 1 : stdDev; // Avoid division by zero
+		
 		    // Compute Z-scores and add progression margin
-		    const progressionMargin = 0.5; // Adjust margin as needed
-		    const zScores = projectValues.map(count => ((count - mean) / stdDev) + progressionMargin);
+		    const progressionMargin = 0.5; // Adjust this margin as needed
+		    const zScores = projectValues.map(count => ((count - mean) / safeStdDev) + progressionMargin);
 		
 		    // Normalize Z-scores to 0-100 scale
 		    const minZ = Math.min(...zScores);
