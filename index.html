@@ -759,15 +759,17 @@ Copyright <script>document.write(new Date().getFullYear());</script> All rights 
 		        'Risk Management': 3
 		    };
 		
-		    // Min-Max Scaling with Fixed Range (10-90) for both datasets
-		    const projectValues = Object.values(projectCounts);
-		    const allValues = [...projectValues]; // Combine for consistent scaling
+		    // Define minimum and maximum skill caps
+		    const minSkillCap = 40; // Minimum mastering level
+		    const maxSkillCap = 90; // Maximum mastering level
 		
-		    const minValue = Math.min(...allValues);
-		    const maxValue = Math.max(...allValues);
+		    // Min-Max Scaling with the defined skill caps
+		    const projectValues = Object.values(projectCounts);
+		    const minValue = Math.min(...projectValues);
+		    const maxValue = Math.max(...projectValues);
 		
 		    const scaledCurrentSkills = projectValues.map(value => 
-		        40 + ((value - minValue) / (maxValue - minValue)) * 60 // Scales to range [10, 90]
+		        minSkillCap + ((value - minValue) / (maxValue - minValue)) * (maxSkillCap - minSkillCap)
 		    );
 		
 		    // Radar chart data
@@ -797,13 +799,13 @@ Copyright <script>document.write(new Date().getFullYear());</script> All rights 
 		                },
 		                {
 		                    label: '',
-		                    data: [100,0,0,0,0,0,0],  // Scaled desired skills
-				    backgroundColor: 'rgba(211, 211, 211, 0.2)',  // Light gray with transparency
-				    borderColor: 'rgba(211, 211, 211, 1)',       // Solid light gray border
-				    pointBackgroundColor: 'rgba(211, 211, 211, 1)',  // Solid light gray for points
-				    pointBorderColor: '#fff',                        // White border around points
-				    pointHoverBackgroundColor: '#fff',               // White on hover
-				    pointHoverBorderColor: 'rgba(211, 211, 211, 1)'  // Solid light gray on hover
+		                    data: [100, 0, 0, 0, 0, 0, 0],  // Scaled desired skills
+		                    backgroundColor: 'rgba(211, 211, 211, 0.2)',  // Light gray with transparency
+		                    borderColor: 'rgba(211, 211, 211, 1)',       // Solid light gray border
+		                    pointBackgroundColor: 'rgba(211, 211, 211, 1)',  // Solid light gray for points
+		                    pointBorderColor: '#fff',                        // White border around points
+		                    pointHoverBackgroundColor: '#fff',               // White on hover
+		                    pointHoverBorderColor: 'rgba(211, 211, 211, 1)'  // Solid light gray on hover
 		                }
 		            ]
 		        },
