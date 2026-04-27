@@ -375,7 +375,7 @@
 									<div class="timeline-label">
 										<h2>Aix-Marseille School of Economics — Quantitative Research Intern</h2>
 										<h2><span>May 2022 – Jun 2022 · Marseille, France</span></h2>
-										<p>Researched cross-asset volatility spillovers between gold and cryptocurrencies using GARCH, DCC-GARCH, and ECM models in R, contributing to an internal working paper.</p>
+										<p>Researched cross-asset volatility spillovers between gold and cryptocurrencies using GARCH(1,1), ARDL/UECM, VAR impulse-response and wavelet coherence in R, contributing to an internal working paper.</p>
 									</div>
 								</div>
 							</article>
@@ -416,15 +416,15 @@
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-md-4 col-sm-6 animate-box" data-animate-effect="fadeInRight">
+					<div class="col-md-4 col-sm-6 animate-box" data-animate-effect="fadeInLeft">
 						<div class="blog-entry">
-							<a href="https://github.com/MTBcd/StressTest_Merton_Model" class="blog-img" title="Credit Risk Stress Testing">
+							<a href="https://github.com/MTBcd/StressTest_Merton_Model" target="_blank" rel="noopener noreferrer" class="blog-img" title="Credit Risk Stress Testing">
 								<img src="images/Merton.jpg" class="img-responsive" alt="Merton Model credit risk stress testing">
 							</a>
 							<div class="desc">
 								<span><small>Credit Risk · Python</small></span>
-								<h3><a href="https://github.com/MTBcd/StressTest_Merton_Model">Credit Risk Stress Testing — Merton Model</a></h3>
-								<p>Python framework assessing corporate bond spread and price sensitivity under equity and environmental regulatory shocks, using a structural credit model with spread duration and convexity adjustments.</p>
+								<h3><a href="https://github.com/MTBcd/StressTest_Merton_Model" target="_blank" rel="noopener noreferrer">Credit Risk Stress Testing — Merton Model</a></h3>
+								<p>Python/Streamlit framework calculating Merton-model default probabilities, credit spreads and recovery rates, with portfolio-level stress-test and repricing impact analysis.</p>
 							</div>
 						</div>
 					</div>
@@ -436,53 +436,92 @@
 							<div class="desc">
 								<span><small>Asset Allocation · Python</small></span>
 								<h3><a href="Mémoire - V_lst.pdf">Macro-Quantitative Allocation Framework</a></h3>
-								<p>Systematic US equity factor allocation framework combining PCA-based macro regime detection, L1 trend filtering, VAR forecasting, and Black-Litterman portfolio optimisation.</p>
+								<p>Systematic US equity factor-allocation framework combining PCA-based macro-regime detection, L1 trend filtering, VAR forecasting and Black-Litterman portfolio optimisation.</p>
 							</div>
 						</div>
 					</div>
 					<div class="col-md-4 col-sm-6 animate-box" data-animate-effect="fadeInLeft">
 						<div class="blog-entry">
-							<a href="https://github.com/MTBcd/Volatility-Inter-dependency-gold-vs-crypto-/blob/main/Internship_Research_AMSE.pdf" class="blog-img" title="Volatility Spillover Study">
-								<img src="images/project-2.jpg" class="img-responsive" alt="Gold and crypto volatility spillover study">
+							<!-- TODO: replace images/project-3.png with FSI dashboard image when provided -->
+							<a href="https://github.com/MTBcd/FSI-Indicator-dash" target="_blank" rel="noopener noreferrer" class="blog-img" title="Financial Stress Indicator Dashboard">
+								<img src="images/project-3.png" class="img-responsive" alt="Financial Stress Indicator Dashboard">
 							</a>
 							<div class="desc">
-								<span><small>Econometrics · R</small></span>
-								<h3><a href="https://github.com/MTBcd/Volatility-Inter-dependency-gold-vs-crypto-/blob/main/Internship_Research_AMSE.pdf">Volatility Spillover Study — Gold & Crypto</a></h3>
-								<p>Analysis of volatility transmission between gold, Bitcoin, and equities using GARCH(1,1), DCC-GARCH, and error-correction approaches in R.</p>
+								<span><small>Risk Monitoring · Python · Dash</small></span>
+								<h3><a href="https://github.com/MTBcd/FSI-Indicator-dash" target="_blank" rel="noopener noreferrer">Financial Stress Indicator Dashboard</a></h3>
+								<p>Interactive Dash dashboard estimating a Financial Stress Index from market indicators, decomposing variable and group contributions, classifying regimes and visualising PnL/benchmark performance with stress ribbons.</p>
 							</div>
 						</div>
 					</div>
 				</div>
-
 				<div class="row">
 					<div class="col-md-4 col-sm-6 animate-box" data-animate-effect="fadeInLeft">
 						<div class="blog-entry">
-							<a href="https://github.com/MTBcd" class="blog-img" title="OTC Pricing Model Validation">
-								<img src="images/project-7.png" class="img-responsive" alt="OTC pricing model validation">
+							<a href="https://github.com/MTBcd/Volatility-Inter-dependency-gold-vs-crypto-/blob/main/Internship_Research_AMSE.pdf" target="_blank" rel="noopener noreferrer" class="blog-img" title="Volatility Spillover Study">
+								<img src="images/project-2.jpg" class="img-responsive" alt="Gold and crypto volatility spillover study">
 							</a>
 							<div class="desc">
-								<span><small>Model Validation · Python</small></span>
-								<h3><a href="https://github.com/MTBcd">OTC Pricing Model Validation — Heston-Nandi GARCH</a></h3>
-								<p>Implementation and calibration of a Heston-Nandi GARCH(1,1) framework for volatility dynamics and model validation work on a precious-metals-linked product.</p>
+								<span><small>Econometrics · R</small></span>
+								<h3><a href="https://github.com/MTBcd/Volatility-Inter-dependency-gold-vs-crypto-/blob/main/Internship_Research_AMSE.pdf" target="_blank" rel="noopener noreferrer">Volatility Spillover Study — Gold &amp; Crypto</a></h3>
+								<p>Statistical study of volatility dynamics between gold, Bitcoin and broader financial market sectors using GARCH(1,1), ARDL/UECM, VAR impulse-response and wavelet coherence analysis in R.</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-6 animate-box" data-animate-effect="fadeInRight">
+						<div class="blog-entry">
+							<!-- TODO: replace images/project-6.jpg with Heston stochastic volatility image when provided -->
+							<a href="https://github.com/MTBcd/HestonPricingModel" target="_blank" rel="noopener noreferrer" class="blog-img" title="Heston Stochastic Volatility Pricer">
+								<img src="images/project-6.jpg" class="img-responsive" alt="Heston stochastic volatility pricer">
+							</a>
+							<div class="desc">
+								<span><small>Derivatives Pricing · Python</small></span>
+								<h3><a href="https://github.com/MTBcd/HestonPricingModel" target="_blank" rel="noopener noreferrer">Heston Stochastic Volatility Pricer</a></h3>
+								<p>Lightweight Python implementation of the continuous-time Heston stochastic-volatility model for European vanilla options, combining characteristic-function/Fourier pricing with full-truncation Euler Monte Carlo comparison.</p>
 							</div>
 						</div>
 					</div>
 					<div class="col-md-4 col-sm-6 animate-box" data-animate-effect="fadeInLeft">
 						<div class="blog-entry">
-							<a href="https://github.com/MTBcd/Air-Traffic-Project/blob/main/projet_airtraffic_clean_lst.ipynb" class="blog-img" title="Time-Series Forecasting Benchmark">
+							<!-- TODO: replace images/project-8.png with Heston-Nandi OTC image when provided -->
+							<a href="https://github.com/MTBcd/HestonNandiModel" target="_blank" rel="noopener noreferrer" class="blog-img" title="OTC Derivatives Pricing — Heston-Nandi GARCH">
+								<img src="images/project-8.png" class="img-responsive" alt="OTC derivatives pricing Heston-Nandi GARCH">
+							</a>
+							<div class="desc">
+								<span><small>Model Validation · Python</small></span>
+								<h3><a href="https://github.com/MTBcd/HestonNandiModel" target="_blank" rel="noopener noreferrer">OTC Derivatives Pricing — Heston-Nandi GARCH</a></h3>
+								<p>Python implementation and validation of the Heston–Nandi GARCH option-pricing model for OTC derivatives, capturing volatility clustering, asymmetric volatility responses and non-constant conditional variance.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4 col-sm-6 animate-box" data-animate-effect="fadeInLeft">
+						<div class="blog-entry">
+							<a href="Value_at_Risk_NoteBook.html" class="blog-img" title="Value-at-Risk Calculation Notebook">
+								<img src="images/project-7.png" class="img-responsive" alt="Value-at-Risk calculation notebook">
+							</a>
+							<div class="desc">
+								<span><small>Risk Management · Python</small></span>
+								<h3><a href="Value_at_Risk_NoteBook.html">Value-at-Risk Calculation Notebook</a></h3>
+								<p>Notebook for rolling Value-at-Risk calculation using parametric and historical/non-parametric approaches, visualising loss quantiles and portfolio risk dynamics.</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-6 animate-box" data-animate-effect="fadeInRight">
+						<div class="blog-entry">
+							<a href="https://github.com/MTBcd/Air-Traffic-Project/blob/main/projet_airtraffic_clean_lst.ipynb" target="_blank" rel="noopener noreferrer" class="blog-img" title="Time-Series Forecasting Benchmark">
 								<img src="images/project-5.png" class="img-responsive" alt="Time-series forecasting benchmark">
 							</a>
 							<div class="desc">
 								<span><small>Forecasting · Python</small></span>
-								<h3><a href="https://github.com/MTBcd/Air-Traffic-Project/blob/main/projet_airtraffic_clean_lst.ipynb">Time-Series Forecasting Benchmark</a></h3>
-								<p>Benchmark comparing Prophet, N-HiTS, XGBoost, and Random Forest on air-traffic data, with evaluation of MAPE / RMSE trade-offs across neural and tree-based architectures.</p>
+								<h3><a href="https://github.com/MTBcd/Air-Traffic-Project/blob/main/projet_airtraffic_clean_lst.ipynb" target="_blank" rel="noopener noreferrer">Time-Series Forecasting Benchmark</a></h3>
+								<p>Benchmark comparing Prophet, N-HiTS, XGBoost and Random Forest on air-traffic data, with evaluation of MAPE/RMSE trade-offs across neural and tree-based architectures.</p>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</section>
-
 		<section class="colorlib-about" data-section="transition">
 			<div class="colorlib-narrow-content">
 				<div class="row">
